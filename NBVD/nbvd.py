@@ -25,7 +25,7 @@ class NBVD(object):
         cols_ind = np.argmax(V, axis=1)    
         return U, S, V, rows_ind, cols_ind, error
     
-    def matrix_factorization_clustering(self, X, k, l, factorization_func=nbvd, norm=False, num_iters=100):
+    def matrix_factorization_clustering(self, X, k, l, factorization_func=nbvd, norm=False, num_iters=1000):
         m, n = X.shape
         U = np.random.rand(m,k)
         S = np.random.rand(k,l)
