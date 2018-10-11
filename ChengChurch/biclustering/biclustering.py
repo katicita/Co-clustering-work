@@ -145,7 +145,6 @@ class DeltaBiclustering(object):
                 #print "removing %s rows..." % len(rows_idxs_to_remove)
                 I = np.delete(I, rows_idxs_to_remove)
             else:
-                #print "rows removal haven't ocurred..."
                 removal_ocurred = False
 
             msr = MSR(data[I][:,J])
@@ -154,7 +153,6 @@ class DeltaBiclustering(object):
                 #print "removing %s columns..." % len(cols_idxs_to_remove)
                 J = np.delete(J, cols_idxs_to_remove)
             else:
-                #print "columns removal haven't ocurred..."
                 if not removal_ocurred:
                     return self.remove_unique_nodes(data, delta, I, J)
 
